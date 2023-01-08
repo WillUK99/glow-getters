@@ -2,7 +2,7 @@
 	import ArticleDetails from './ArticleDetails.svelte';
 </script>
 
-<section>
+<section class="container mx-auto">
 	<ArticleDetails
 		date="Jan 13, 2023"
 		title="Lorem, ipsum dolor sit amet."

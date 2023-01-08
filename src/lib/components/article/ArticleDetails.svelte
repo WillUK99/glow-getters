@@ -8,7 +8,7 @@
 
 <div class="container flex flex-col gap-5 mt-2 text-center">
 	<p class="font-thin uppercase font-rowdies">{date}</p>
-	<h2 class="text-3xl uppercase font-large font-rowdies">{title}</h2>
+	<h2 class="text-3xl uppercase font-large font-rowdies md:text-4xl xl:text-5xl">{title}</h2>
 	{#if excerpt}
 		<p class="font-medium font-poppins">{excerpt}</p>
 	{/if}

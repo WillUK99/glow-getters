@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<section class="flex flex-col">
+<section class="container flex flex-col mx-auto">
 	<h3 class="mb-6 font-bold uppercase font-rowdies">The latest from glow getters</h3>
 	<a href="/articles/a" class="py-4 border-b-[1px] border-b-black w-full flex justify-between group"
 		>Lorem ipsum dolor sit amet <span class="transition font-rowdies group-hover:-translate-x-3"
