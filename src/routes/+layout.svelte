@@ -1,5 +1,8 @@
-<script>
-  import "../app.css";
+<script lang="ts">
+	import '../app.css';
+	import Layout from '../lib/components/layout/Layout.svelte';
 </script>
 
-<slot />
+<Layout>
+	<slot />
+</Layout>
