@@ -16,7 +16,7 @@
 <div class="sticky top-0 z-50">
 	<div>
 		<nav class="px-2 py-2 mx-auto shadow-sm bg-primary md:flex md:justify-between md:items-center">
-			<div class="flex items-center justify-between">
+			<div class="flex items-center justify-between container mx-auto">
 				<a
 					class="flex flex-col text-xl font-thin text-gray-800 uppercase font-rowdies md:text-2xl hover:text-tertiary"
 					href="/"
@@ -65,11 +65,11 @@
 					class="text-gray-800 hover:text-tertiary"
 					href="/articles">Articles</a
 				>
-				<a
+				<!-- <a
 					class:active={$page.url.pathname === '/contact'}
 					class="text-gray-800 hover:text-tertiary"
 					href="/contact">Contact us</a
-				>
+				> -->
 			</div>
 		</nav>
 	</div>
