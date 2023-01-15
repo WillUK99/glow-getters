@@ -1,12 +1,19 @@
 <script lang="ts">
+	import type { PageData } from './$types';
 	import { page } from '$app/stores';
+	import { format } from 'date-fns';
+
+	export let data: PageData;
+	console.log('***Data in page.svelte', data);
 </script>
 
 <div class="container mx-auto my-20 px-2 text-center md:text-left">
 	<div class="flex flex-col gap-5">
-		<p class="font-thin uppercase font-rowdies xl">Jan 5, 2023</p>
+		<p class="font-thin uppercase font-rowdies xl">
+			{format(new Date(data.article.publishedAt), 'MMM dd yyyy')}
+		</p>
 		<h2 class="text-3xl uppercase font-large font-rowdies md:text-4xl xl:text-5xl">
-			{$page.params.article}: Lorem, ipsum dolor.
+			{data.article.title}: Lorem, ipsum dolor.
 		</h2>
 		<div class="grid grid-cols-1 gap-5 md:grid-cols-2">
 			<img

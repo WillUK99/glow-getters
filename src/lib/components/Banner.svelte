@@ -24,7 +24,10 @@
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio modi cum non eos id
 					magni excepturi vitae perspiciatis officiis placeat.
 				</p>
-				<a href="/articles/article" class="font-medium font-rowdies hover:underline">Read more →</a>
+				<a
+					href="/articles/unlock-your-minds-potential-the-power-of-mental-fitness"
+					class="font-medium font-rowdies hover:underline">Read more →</a
+				>
 			</div>
 		</div>
 	</div>
