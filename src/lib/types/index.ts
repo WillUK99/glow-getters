@@ -2,8 +2,21 @@ export type Article = {
   id: string;
   title: string;
   slug: string;
-  publishedAt: string;
-  content?: {
-    html?: string;
+  createdAt: string;
+  content: {
+    html: string;
+    text: string;
+  };
+  imageOne: {
+    imageAlt: string;
+    image: {
+      url: string;
+    };
+  };
+  imageTwo: {
+    imageAlt: string;
+    image: {
+      url: string;
+    };
   };
 }

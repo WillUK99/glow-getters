@@ -1,3 +1,3 @@
 import { GraphQLClient } from 'graphql-request'
-const HYGRAPH_ENDPOINT = import.meta.env.VITE_HYGRAPH_ENDPOINT
-export const client = new GraphQLClient(HYGRAPH_ENDPOINT)
+import { SECRET_API_ENDPOINT } from '$env/static/private'
+export const client = new GraphQLClient(SECRET_API_ENDPOINT)

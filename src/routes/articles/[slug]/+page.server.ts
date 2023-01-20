@@ -1,10 +1,9 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { client } from '$lib/gql-client';
 import { articleBySlugQuery } from '$lib/gql-queries';
-import type { Article } from '$lib/types';
 
-export const load: PageLoad = (async ({ params }) => {
+export const load: PageServerLoad = (async ({ params }) => {
   const { slug } = params;
 
   const data = await client.request(articleBySlugQuery, { slug });
@@ -15,5 +14,5 @@ export const load: PageLoad = (async ({ params }) => {
     };
   }
 
-  console.log(data)
+  throw error(404, 'Article not found');
 });

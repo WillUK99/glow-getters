@@ -1,32 +1,26 @@
 <script lang="ts">
+	import { first25 } from '$lib/helpers/first25';
+	import type { Article } from '$lib/types';
 	import ArticleDetails from './ArticleDetails.svelte';
+
+	export let posts: Article[];
 </script>
 
 <section class="container flex flex-col gap-20 mx-auto md:flex-row md:justify-between">
-	<div class="flex flex-col">
-		<img
-			src="https://images.unsplash.com/photo-1647891941746-fe1d53ddc7a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=1296&q=60"
-			alt="some alt text here"
-			class="object-cover w-full max-h-80 md:max-h-96 xl:max-h-[30rem]"
-		/>
-		<ArticleDetails
-			date="Jan 13, 2023"
-			title="Lorem, ipsum dolor sit amet."
-			linkText="Read more"
-			slug="article"
-		/>
-	</div>
-	<div class="flex flex-col">
-		<img
-			src="https://images.unsplash.com/photo-1647891941746-fe1d53ddc7a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=1296&q=60"
-			alt="some alt text here"
-			class="object-cover w-full max-h-80 md:max-h-96 xl:max-h-[30rem]"
-		/>
-		<ArticleDetails
-			date="Jan 13, 2023"
-			title="Lorem, ipsum dolor sit amet."
-			linkText="Read more"
-			slug="article"
-		/>
-	</div>
+	{#each posts as post}
+		<div class="flex flex-col md:w-1/2">
+			<img
+				src={post.imageOne.image.url}
+				alt={post.imageOne.imageAlt}
+				class="object-cover w-full max-h-80 md:max-h-96 xl:max-h-[30rem]"
+			/>
+			<ArticleDetails
+				date={post.createdAt}
+				title={post.title}
+				excerpt={first25(post.content.text)}
+				linkText="Continue reading"
+				slug={post.slug}
+			/>
+		</div>
+	{/each}
 </section>

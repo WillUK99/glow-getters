@@ -1,8 +1,13 @@
 <script lang="ts">
+	import type { Article } from '$lib/types';
+	import { first25 } from '$lib/helpers/first25';
 	import { Autoplay } from 'swiper';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
-	import 'swiper/css';
 	import ArticleDetails from './ArticleDetails.svelte';
+
+	export let post: Article;
+
+	import 'swiper/css';
 </script>
 
 <section class="container mx-auto">
@@ -57,10 +62,10 @@
 		</SwiperSlide>
 	</Swiper>
 	<ArticleDetails
-		date="Jan 13, 2023"
-		title="Lorem, ipsum dolor sit amet."
-		excerpt="Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio modi cum non eos id magni excepturi vitae perspiciatis officiis placeat."
-		linkText="Read more"
-		slug="article"
+		date={post.createdAt}
+		title={post.title}
+		excerpt={first25(post.content.text)}
+		linkText="Continue reading"
+		slug={post.slug}
 	/>
 </section>
