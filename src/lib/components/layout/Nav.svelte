@@ -9,8 +9,8 @@
 </script>
 
 <div class="sticky top-0 z-50">
-	<div>
-		<nav class="px-2 py-2 mx-auto shadow-sm bg-primary md:flex md:justify-between md:items-center">
+	<div class="shadow-sm">
+		<nav class="container px-2 py-2 mx-auto  bg-primary md:flex md:justify-between md:items-center">
 			<div class="flex items-center justify-between container mx-auto">
 				<a
 					class="flex flex-col text-xl font-thin text-gray-800 uppercase font-rowdies md:text-2xl hover:text-tertiary"
