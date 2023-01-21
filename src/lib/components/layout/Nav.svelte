@@ -8,11 +8,6 @@
 	};
 </script>
 
-<!-- <button on:click={toggleOpen}>Toggle</button>
-{#if isOpen}
-  <h1>Open</h1>
-{/if} -->
-
 <div class="sticky top-0 z-50">
 	<div>
 		<nav class="px-2 py-2 mx-auto shadow-sm bg-primary md:flex md:justify-between md:items-center">
@@ -21,8 +16,7 @@
 					class="flex flex-col text-xl font-thin text-gray-800 uppercase font-rowdies md:text-2xl hover:text-tertiary"
 					href="/"
 				>
-					<span>glow</span>
-					<span>getters</span>
+					<span>moralio</span>
 				</a>
 				<!-- Mobile menu button -->
 				<div on:click={toggleMenu} on:keypress={toggleMenu} class="flex md:hidden">

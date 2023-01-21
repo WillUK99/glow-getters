@@ -6,6 +6,7 @@
 	import ArticleDetails from './ArticleDetails.svelte';
 
 	export let post: Article;
+	export let images: any;
 
 	import 'swiper/css';
 </script>
@@ -25,41 +26,11 @@
 			}
 		}}
 	>
-		<SwiperSlide class="max-h-[35rem]">
-			<img
-				src="https://images.unsplash.com/photo-1647891941746-fe1d53ddc7a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=1296&q=60"
-				alt="some alt text here"
-				class="cursor-grab"
-			/>
-		</SwiperSlide>
-		<SwiperSlide class="max-h-[35rem]">
-			<img
-				src="https://images.unsplash.com/photo-1647891941746-fe1d53ddc7a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=1296&q=60"
-				alt="some alt text here"
-				class="cursor-grab"
-			/>
-		</SwiperSlide>
-		<SwiperSlide class="max-h-[35rem]">
-			<img
-				src="https://images.unsplash.com/photo-1647891941746-fe1d53ddc7a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=1296&q=60"
-				alt="some alt text here"
-				class="cursor-grab"
-			/>
-		</SwiperSlide>
-		<SwiperSlide class="max-h-[35rem]">
-			<img
-				src="https://images.unsplash.com/photo-1647891941746-fe1d53ddc7a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=1296&q=60"
-				alt="some alt text here"
-				class="cursor-grab"
-			/>
-		</SwiperSlide>
-		<SwiperSlide class="max-h-[35rem]">
-			<img
-				src="https://images.unsplash.com/photo-1647891941746-fe1d53ddc7a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=1296&q=60"
-				alt="some alt text here"
-				class="cursor-grab"
-			/>
-		</SwiperSlide>
+		{#each images as image}
+			<SwiperSlide class="max-h-[35rem]">
+				<img src={image.image.url} alt={image.image.imageAlt} class="cursor-grab" />
+			</SwiperSlide>
+		{/each}
 	</Swiper>
 	<ArticleDetails
 		date={post.createdAt}

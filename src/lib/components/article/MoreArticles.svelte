@@ -5,7 +5,7 @@
 </script>
 
 <section class="container flex flex-col mx-auto">
-	<h3 class="mb-6 font-bold uppercase font-rowdies">The latest from glow getters</h3>
+	<h3 class="mb-6 font-bold uppercase font-rowdies">The latest from moralio</h3>
 	{#each posts as post}
 		<a
 			href={`/articles/${post.slug}`}

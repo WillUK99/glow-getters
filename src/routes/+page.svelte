@@ -8,10 +8,11 @@
 	import MoreArticles from '$lib/components/article/MoreArticles.svelte';
 
 	export let data: PageServerData;
+	console.log(data);
 </script>
 
 <Banner post={data.articles[0]} />
 <NewArticle post={data.articles[1]} />
-<CarouselArticle post={data.articles[2]} />
+<CarouselArticle post={data.articles[2]} images={data.images} />
 <DoubleArticle posts={[data.articles[3], data.articles[4]]} />
 <MoreArticles posts={[data.articles[5], data.articles[6], data.articles[7]]} />

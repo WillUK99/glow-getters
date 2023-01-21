@@ -44,3 +44,18 @@ export const articleBySlugQuery = gql`
     }
   }
 `
+
+export const carouselQuery = gql`
+  query {
+    homePages {
+      carousel {
+        carouselItem {
+          image {
+            url
+          }
+          imageAlt
+        }
+      }
+    }
+  }
+`
