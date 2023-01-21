@@ -8,7 +8,6 @@
 	import MoreArticles from '$lib/components/article/MoreArticles.svelte';
 
 	export let data: PageServerData;
-	console.log(data);
 </script>
 
 <Banner post={data.articles[0]} />
