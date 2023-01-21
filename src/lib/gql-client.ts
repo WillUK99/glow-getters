@@ -1,3 +1,3 @@
 import { GraphQLClient } from 'graphql-request'
-import { SECRET_API_ENDPOINT } from '$env/static/private'
-export const client = new GraphQLClient(SECRET_API_ENDPOINT)
+import { PUBLIC_API_ENDPOINT } from '$env/static/public'
+export const client = new GraphQLClient(PUBLIC_API_ENDPOINT)

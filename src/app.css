@@ -23,12 +23,12 @@ body {
   @apply bg-primary;
 }
 
-.article__body>img {
-  max-height: 30rem !important;
-  object-fit: cover;
-}
-
 section {
   margin: 6rem 0;
   padding: 0 0.5rem;
+}
+
+.article__body>img {
+  max-height: 30rem !important;
+  object-fit: cover;
 }

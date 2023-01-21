@@ -1,13 +1,13 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { client } from '$lib/gql-client';
 import { allArticles, carouselQuery } from '$lib/gql-queries';
 
-export const load: PageServerLoad = async () => {
+export const load: PageLoad = async () => {
   const data = await client.request(allArticles);
   const images = await client.request(carouselQuery);
-  console.log(images)
-  if (data.articlePages) {
+
+  if (data.articlePages && images.homePages) {
     return {
       // Messed hygraph up, so I'm hacking this for now
       articles: data.articlePages.slice(Math.max(data.articlePages.length - 8, 0)).reverse(),

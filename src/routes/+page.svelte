@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageServerData } from './$types';
+	import type { PageData } from './$types';
 
 	import Banner from '$lib/components/Banner.svelte';
 	import NewArticle from '$lib/components/article/NewArticle.svelte';
@@ -7,7 +7,7 @@
 	import DoubleArticle from '$lib/components/article/DoubleArticle.svelte';
 	import MoreArticles from '$lib/components/article/MoreArticles.svelte';
 
-	export let data: PageServerData;
+	export let data: PageData;
 </script>
 
 <Banner post={data.articles[0]} />
