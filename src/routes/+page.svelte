@@ -10,7 +10,6 @@
 	import MetaData from '$lib/components/MetaData.svelte';
 
 	export let data: PageData;
-	console.log(data);
 </script>
 
 <MetaData

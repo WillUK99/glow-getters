@@ -6,7 +6,7 @@ import { allArticles, homepageQuery } from '$lib/gql-queries';
 export const load: PageLoad = async () => {
   const homepage = await client.request(homepageQuery);
   const articles = await client.request(allArticles);
-  // get meta data for homepage
+
   if (articles.articlePages && homepage.homePages) {
     return {
       homepage: homepage.homePages[0],
