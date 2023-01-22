@@ -4,6 +4,7 @@
 	import { format } from 'date-fns';
 
 	export let post: Article;
+	export let title: string;
 </script>
 
 <section class="mt-0 md:mt-10">
@@ -11,7 +12,7 @@
 		<h1
 			class="z-10 text-6xl font-bold text-center uppercase font-rowdies md:text-7xl xl:text-9xl xl:mb-10"
 		>
-			A Blog on Life, Learning, and Growth
+			{title}
 		</h1>
 		<div class="flex flex-col w-full gap-5 xl:grid xl:grid-cols-2 xl:text-left">
 			<img src={post.imageOne.image.url} alt={post.imageOne.imageAlt} />

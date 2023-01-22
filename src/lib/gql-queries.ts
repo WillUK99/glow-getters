@@ -7,6 +7,7 @@ export const allArticles = gql`
       slug
       title
       createdAt
+      metaDescription
       content {
         text
       }
@@ -26,6 +27,7 @@ export const articleBySlugQuery = gql`
       title 
       slug
       createdAt
+      metaDescription
       content {
         html
       }
@@ -45,9 +47,11 @@ export const articleBySlugQuery = gql`
   }
 `
 
-export const carouselQuery = gql`
+export const homepageQuery = gql`
   query {
     homePages {
+      title
+      metaDescription
       carousel {
         carouselItem {
           image {

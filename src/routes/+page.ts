@@ -1,17 +1,17 @@
 import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { client } from '$lib/gql-client';
-import { allArticles, carouselQuery } from '$lib/gql-queries';
+import { allArticles, homepageQuery } from '$lib/gql-queries';
 
 export const load: PageLoad = async () => {
-  const data = await client.request(allArticles);
-  const images = await client.request(carouselQuery);
-
-  if (data.articlePages && images.homePages) {
+  const homepage = await client.request(homepageQuery);
+  const articles = await client.request(allArticles);
+  // get meta data for homepage
+  if (articles.articlePages && homepage.homePages) {
     return {
-      // Messed hygraph up, so I'm hacking this for now
-      articles: data.articlePages.slice(Math.max(data.articlePages.length - 8, 0)).reverse(),
-      images: images.homePages[0].carousel.carouselItem
+      homepage: homepage.homePages[0],
+      articles: articles.articlePages.slice(Math.max(articles.articlePages.length - 8, 0)).reverse(),
+      images: homepage.homePages[0].carousel.carouselItem,
     };
   }
 

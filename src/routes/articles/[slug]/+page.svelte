@@ -1,10 +1,20 @@
 <script lang="ts">
-	import type { PageServerData } from './$types';
+	import { page } from '$app/stores';
+	import type { PageData } from './$types';
 	import { format } from 'date-fns';
+	import MetaData from '$lib/components/MetaData.svelte';
 
-	export let data: PageServerData;
+	export let data: PageData;
 </script>
 
+<MetaData
+	metaData={{
+		title: `${data.article.title}`,
+		description: `${data.article.metaDescription}`,
+		image: `${data.article.imageOne.image.url}`,
+		url: `${$page.url}`
+	}}
+/>
 <div class="container mx-auto my-20 px-2 text-center md:text-left">
 	<div class="flex flex-col gap-5">
 		<p class="font-thin uppercase font-rowdies xl">
