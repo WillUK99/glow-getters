@@ -35,7 +35,7 @@ export async function GET() {
       </url>
       ${articlePages
         .map((article: Article) => `<url>
-          <loc>${website}articles/${article.slug}</loc>
+          <loc>${website}/articles/${article.slug}</loc>
           <lastmod>${new Date(article.updatedAt).toISOString()}</lastmod>
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
